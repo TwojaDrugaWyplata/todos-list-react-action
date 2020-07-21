@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
 
-const List = ({ tasks, HideDone, deleteTask, toggleTaskDone }) => (
+const List = ({ tasks, isHidingEnabled, deleteTask, toggleTaskDone }) => (
     <ul className="list">
         {tasks.map(({ id, name, done }) => (
             <li
                 key={id}
-                className={`list__item${done && HideDone ? " list__item--hidden" : ""}`}
+                className={`list__item${done && isHidingEnabled ? " list__item--hidden" : ""}`}
             >
                 <button
                     onClick={() => toggleTaskDone(id)}

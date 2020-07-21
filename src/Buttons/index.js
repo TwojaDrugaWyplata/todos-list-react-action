@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const Buttons = ({ tasks, HideDone, toggleHideDone, doAllTasks }) => (
+const Buttons = ({ tasks, isHidingEnabled, toggleHideDone, doAllTasks }) => (
     <div className="buttons">
         {tasks.length > 0 && (
             <>
@@ -9,7 +9,7 @@ const Buttons = ({ tasks, HideDone, toggleHideDone, doAllTasks }) => (
                     className="buttons__button"
                     onClick={toggleHideDone}
                 >
-                    {HideDone ? "Pokaż" : "Ukryj"} ukończone
+                    {isHidingEnabled ? "Pokaż" : "Ukryj"} ukończone
                 </button>
                 <button
                     className="buttons__button"
