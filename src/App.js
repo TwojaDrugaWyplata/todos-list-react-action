@@ -7,7 +7,7 @@ import Header from "./Header";
 import Container from "./Container";
 
 function App() {
-  const [isHidingEnabled, setIsHidingEnabled] = useState(false);
+  const [HideDone, setHideDone] = useState(false);
   const [tasks, setTasks] = useState(
     [
       { id: 1, name: "Zjeść kolacje", done: true },
@@ -15,7 +15,7 @@ function App() {
     ]
   );
   const toggleHideDone = () => {
-    setIsHidingEnabled(isHidingEnabled => !isHidingEnabled);
+    setHideDone(HideDone => !HideDone);
   };
   const deleteTask = id => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
@@ -57,14 +57,14 @@ function App() {
         extraHeaderContent=
         {<Buttons
           tasks={tasks}
-          isHidingEnabled={isHidingEnabled}
+          HideDone={HideDone}
           toggleHideDone={toggleHideDone}
           doAllTasks={doAllTasks}
         />}
         body=
         {<List
           tasks={tasks}
-          isHidingEnabled={isHidingEnabled}
+          HideDone={HideDone}
           deleteTask={deleteTask}
           toggleTaskDone={toggleTaskDone} />}
       />
