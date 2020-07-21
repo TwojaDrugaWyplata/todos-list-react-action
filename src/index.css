@@ -7,8 +7,12 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
   background-color: #eee;
-  font-size: 16px;
-  padding: 10px;
+  font-family: 'lato', sans-serif;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 10px;
+  }
 }
